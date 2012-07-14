@@ -16,6 +16,40 @@
 	<name>M2E Connector for Maven Dependency Plugin Parent</name>
 	<url>http://ianbrandt.com</url>
 
+	<licenses>
+		<license>
+			<name>Eclipse Public License - v 1.0</name>
+			<url>http://www.eclipse.org/legal/epl-v10.html</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>ianbrandt</id>
+			<name>Ian Brandt</name>
+			<email>ian@ianbrandt.com</email>
+			<url>http://ianbrandt.com/</url>
+			<organizationUrl>http://ianbrandt.com/</organizationUrl>
+			<roles>
+				<role>founder</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-8</timezone>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<url>https://github.com/ianbrandt/m2e-maven-dependency-plugin/issues</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:ianbrandt/m2e-maven-dependency-plugin.git</connection>
+		<url>scm:git:git@github.com:ianbrandt/m2e-maven-dependency-plugin.git</url>
+		<developerConnection>scm:git:git@github.com:ianbrandt/m2e-maven-dependency-plugin.git</developerConnection>
+	</scm>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<tycho-version>0.15.0</tycho-version>
