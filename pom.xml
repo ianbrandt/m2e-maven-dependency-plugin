@@ -19,6 +19,7 @@
 	<modules>
 		<module>com.ianbrandt.m2e.mdp.core</module>
 		<module>com.ianbrandt.m2e.mdp.tests</module>
+		<module>com.ianbrandt.m2e.mdp.feature</module>
 	</modules>
 
 	<licenses>

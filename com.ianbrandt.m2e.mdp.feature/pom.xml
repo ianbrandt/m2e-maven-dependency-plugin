@@ -8,9 +8,9 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>com.ianbrandt.m2e.mdp.tests</artifactId>
-	<packaging>eclipse-test-plugin</packaging>
+	<artifactId>com.ianbrandt.m2e.mdp.feature</artifactId>
+	<packaging>eclipse-feature</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Tests</name>
+	<name>M2E Connector for Maven Dependency Plugin Feature</name>
 
 </project>
