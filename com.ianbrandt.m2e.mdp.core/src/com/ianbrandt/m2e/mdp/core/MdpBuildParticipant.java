@@ -1,6 +1,12 @@
 package com.ianbrandt.m2e.mdp.core;
 
+import java.beans.IntrospectionException;
+import java.beans.PropertyDescriptor;
 import java.io.File;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.maven.plugin.MojoExecution;
@@ -15,7 +21,9 @@ import org.sonatype.plexus.build.incremental.BuildContext;
 
 public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 
-	private static final String OUTPUT_DIRECTORY = "outputDirectory";
+	private static final String ARTIFACT_ITEMS_PROPERTY = "artifactItems";
+
+	private static final String OUTPUT_DIRECTORY_PROPERTY = "outputDirectory";
 
 	public MdpBuildParticipant(MojoExecution execution) {
 
@@ -37,24 +45,63 @@ public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 
 		final Set<IProject> result = executeMojo(kind, monitor);
 
-		final File outputDirectory = getOutputDirectory(maven, mojoExecution);
+		final Set<File> outputDirectories = getOutputDirectories(maven, mojoExecution);
 
-		refreshOutputDirectory(buildContext, outputDirectory);
+		for (File outputDirectory : outputDirectories) {
+
+			refreshOutputDirectory(buildContext, outputDirectory);
+		}
 
 		return result;
 	}
 
-	private File getOutputDirectory(final IMaven maven, final MojoExecution mojoExecution) throws CoreException {
+	private Set<File> getOutputDirectories(final IMaven maven, final MojoExecution mojoExecution) throws CoreException,
+			IntrospectionException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
 
-		return maven.getMojoParameterValue(getSession(), mojoExecution, OUTPUT_DIRECTORY, File.class);
+		final Set<File> outputDirectories = new HashSet<File>();
+
+		final File globalOutputDirectory = maven.getMojoParameterValue(getSession(), mojoExecution,
+				OUTPUT_DIRECTORY_PROPERTY, File.class);
+
+		final List<?> artifactItems = maven.getMojoParameterValue(getSession(), mojoExecution, ARTIFACT_ITEMS_PROPERTY,
+				List.class);
+
+		Method getOutputDirectoryMethod = null;
+
+		for (Object artifactItem : artifactItems) {
+
+			if (getOutputDirectoryMethod == null) {
+
+				getOutputDirectoryMethod = new PropertyDescriptor(OUTPUT_DIRECTORY_PROPERTY, artifactItem.getClass())
+						.getReadMethod();
+			}
+
+			File artifactItemOutputDirectory = (File) getOutputDirectoryMethod.invoke(artifactItem);
+
+			if (artifactItemOutputDirectory != null) {
+
+				outputDirectories.add(artifactItemOutputDirectory);
+
+			} else {
+
+				outputDirectories.add(globalOutputDirectory);
+			}
+		}
+
+		if (outputDirectories.size() == 0) {
+
+			outputDirectories.add(globalOutputDirectory);
+		}
+
+		return outputDirectories;
 	}
 
 	private void setTaskName(IProgressMonitor monitor) {
 
 		if (monitor != null) {
 
-			final String taskName = NLS.bind("Invoking {0} on {1}", getMojoExecution().getMojoDescriptor().getFullGoalName(),
-					getMavenProjectFacade().getProject().getName());
+			final String taskName = NLS.bind("Invoking {0} on {1}", getMojoExecution().getMojoDescriptor()
+					.getFullGoalName(), getMavenProjectFacade().getProject().getName());
 
 			monitor.setTaskName(taskName);
 		}

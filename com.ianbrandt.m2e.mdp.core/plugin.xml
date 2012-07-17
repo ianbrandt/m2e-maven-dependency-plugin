@@ -3,7 +3,7 @@
 <plugin>
 	<extension point="org.eclipse.m2e.core.projectConfigurators">
 		<configurator class="com.ianbrandt.m2e.mdp.core.MdpProjectConfigurator"
-				id="com.ianbrandt.m2e.mdp.core.mdpConfigurator" name="Maven Dependency Plugin Project Configurator">
+				id="com.ianbrandt.m2e.mdp.core.MdpProjectConfigurator" name="Maven Dependency Plug-in Project Configurator">
 		</configurator>
 	</extension>
 	<extension point="org.eclipse.m2e.core.lifecycleMappingMetadataSource">

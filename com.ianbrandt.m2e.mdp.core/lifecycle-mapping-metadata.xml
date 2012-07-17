@@ -12,7 +12,7 @@
 			</pluginExecutionFilter>
 			<action>
 				<configurator>
-					<id>com.ianbrandt.m2e.mdp.mdpConfigurator</id>
+					<id>com.ianbrandt.m2e.mdp.core.MdpProjectConfigurator</id>
 				</configurator>
 			</action>
 		</pluginExecution>

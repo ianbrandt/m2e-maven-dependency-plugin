@@ -12,11 +12,6 @@
 	<artifactId>com.ianbrandt.m2e.mdp.core</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Core</name>
-	<url>http://ianbrandt.com</url>
-
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<name>M2E Connector for Maven Dependency Plug-in Core</name>
 
 </project>
