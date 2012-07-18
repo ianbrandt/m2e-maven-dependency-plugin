@@ -9,11 +9,16 @@ incremental builds, and configured outputDirectory(s) will then be refreshed.
 
 ### How do I use it? ###
 
-_Coming soon..._
+Simple:
 
-> I need to sort out how to regularly publish this to a P2 repository somewhere.  Once I've done that
-you'll be able to install this into Eclipse via an update site.  Early adopters could clone the project, build it with
-Maven, and install it from "./com.ianbrandt.m2e.mdp.site/target/site/" as a local update site.
+1. [Add the following update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):
+	* http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
+1. Install it into Eclipse like any other [new feature](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-124.htm?cp=0_3_15_1).
+1. Remove any [lifecycle mapping metadata](http://wiki.eclipse.org/M2E_plugin_execution_not_covered#ignore_plugin_goal) you might have had in your POMs for the dependency:unpack goal.
+
+That's it!  The connector will run on full and incremental builds, leaving it to the Maven Dependency Plugin's [overwrite rules](http://maven.apache.org/plugins/maven-dependency-plugin/usage.html#aOverwrite_Rules) to unpack the artifacts when appropriate.
+
+_A word of warning_: be mindful of your overwrite rules.  Forcing an unpack for every IDE build could be harmful to performance.
 
 ### How can I help the project? ###
 
