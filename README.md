@@ -3,7 +3,7 @@ M2E connector for the Maven Dependency Plugin
 
 This m2e connector for the Maven Dependency Plugin adds a lifecycle mapping for the
 [Unpack Mojo](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html).  It will be executed during
-incremental builds, and configured outputDirectory(s) will then be refreshed.
+full and incremental builds, and configured outputDirectory(s) will then be refreshed.
 
 ## FAQ ##
 
