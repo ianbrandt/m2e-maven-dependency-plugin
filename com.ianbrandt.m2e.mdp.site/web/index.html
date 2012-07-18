@@ -3,7 +3,7 @@
 <title>com.ianbrandt.m2e.mdp.site</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
-@import url("web/site.css");
+@import url("site.css");
 </style>
 <script type="text/javascript">
 	var returnval = 0;
@@ -16,7 +16,7 @@
 			stylesheet = document.implementation.createDocument("", "", null);
 			if (xmlFile.load) {
 				xmlFile.load("site.xml");
-				stylesheet.load("web/site.xsl");
+				stylesheet.load("site.xsl");
 			} else {
 				alert("Document could not be loaded by browser.");
 			}
@@ -30,7 +30,7 @@
 			xmlFile.load("site.xml");
 			stylesheet = new ActiveXObject("msxml2.FreeThreadedDOMDocument.3.0");
 			stylesheet.async = false;
-			stylesheet.load("web/site.xsl");
+			stylesheet.load("site.xsl");
 			cache = new ActiveXObject("msxml2.XSLTemplate.3.0");
 			cache.stylesheet = stylesheet;
 			transformData();

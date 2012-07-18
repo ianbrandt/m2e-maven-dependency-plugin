@@ -7,7 +7,7 @@
 			<html>
 				<head>
 					<title>com.ianbrandt.m2e.mdp.site</title>
-					<style type="text/css">@import url("web/site.css");</style>
+					<style type="text/css">@import url("site.css");</style>
 				</head>
 				<body>
 					<h1 class="title">com.ianbrandt.m2e.mdp.site</h1>

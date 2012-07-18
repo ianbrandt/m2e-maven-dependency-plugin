@@ -9,5 +9,9 @@
 			<directory>${project.build.directory}/site</directory>
 			<outputDirectory>/</outputDirectory>
 		</fileSet>
+		<fileSet>
+			<directory>${basedir}/web</directory>
+			<outputDirectory>/</outputDirectory>
+		</fileSet>
 	</fileSets>
 </assembly>
