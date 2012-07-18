@@ -11,8 +11,8 @@ full and incremental builds, and configured outputDirectory(s) will then be refr
 
 Simple:
 
-1. [Add the following update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):
-	* http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
+1. Add the following [update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):  
+http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
 1. Install it into Eclipse like any other [new feature](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-124.htm?cp=0_3_15_1).
 1. Remove any [lifecycle mapping metadata](http://wiki.eclipse.org/M2E_plugin_execution_not_covered#ignore_plugin_goal) you might have had in your POMs for the dependency:unpack goal.
 
@@ -37,7 +37,7 @@ Thanks for asking...
 	* Skim the source and suggest improvements via issues or pull requests.
 	* Contribute new test cases.
 * If you're a representative of the Eclipse Foundation or Apache Software Foundation or similar:
-	* I'd be happy to consider donating this plugin--do get in touch.
+	* I'd be happy to consider donating this plugin&mdash;do get in touch.
 
 ## Thanks ##
 
