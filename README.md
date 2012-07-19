@@ -29,7 +29,7 @@ artifacts when appropriate.
 
 * Be mindful of your overwrite rules.  Forcing an unpack for every IDE build could slow things down quite a bit.
 * If you unpack into an `outputDirectory` that generally also contains a lot of other resources, the workspace refresh
-could take longer than you'd want.  Try to unpack archives into distinct output directories.
+could take longer than you'd want.  Try to unpack artifacts into distinct output directories.
 
 ### How can I help the project? ###
 
