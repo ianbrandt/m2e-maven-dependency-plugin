@@ -9,9 +9,10 @@ full and incremental builds, and configured outputDirectory(s) will then be refr
 
 ### How do I use it? ###
 
-Simple:
+First off, note that this is currently Beta code.  It has been minimally tested, and all the usual early adopter
+warnings apply.  That said if you're willing to help test the connector all you have to do is:
 
-1. Add the following [update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):  
+1. Add the following [update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):
 http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
 1. Install it into Eclipse like any other [new feature](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-124.htm?cp=0_3_15_1).
 1. Remove any [lifecycle mapping metadata](http://wiki.eclipse.org/M2E_plugin_execution_not_covered#ignore_plugin_goal) you might have had in your POMs for the dependency:unpack goal.
@@ -26,14 +27,15 @@ Thanks for asking...
 
 * If you're a dependency:unpack user:
 	* Test this out.  [File an issue](https://github.com/ianbrandt/m2e-maven-dependency-plugin/issues) if it doesn't
-	work for you.  File an issue if you think it should do something more or something different.
+	work for you.  File an issue if you think it should do something more, or something different.
 * If you're a user of any other Maven Dependency Plugin goal:
-	* File an issue to request mappings for additional goals.  Be as specific as possible in describing the behavior
-	you would expect.  If you think the behavior might warrant configuration, either via files or a UI, share your
-	vision for this as well.
+	* File an issue to request mappings for additional goals.  Support for copy, copy-dependencies, and
+	unpack-dependencies is currently planned to be similar to that of unpack.  Perhaps you have different needs for
+	those goals?  Be as specific as possible in describing the behavior you would expect.  If you think the behavior
+	might warrant configuration, either via files or a UI, share your vision for this as well.
 * If you're a Tycho expert:
 	* Skim the POMs.  File an issue or submit a pull request if there is something that could be done better.
-* If you're an Eclipse Plugin or M2E expert:
+* If you're an Eclipse Plugin or m2e expert:
 	* Skim the source and suggest improvements via issues or pull requests.
 	* Contribute new test cases.
 * If you're a representative of the Eclipse Foundation or Apache Software Foundation or similar:
