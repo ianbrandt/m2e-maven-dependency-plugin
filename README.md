@@ -41,6 +41,14 @@ Thanks for asking...
 * If you're a representative of the Eclipse Foundation or Apache Software Foundation or similar:
 	* I'd be happy to consider donating this plugin&mdash;do get in touch.
 
+### Why not just make the Maven Dependency Plugin itself m2e compatible? ###
+
+Connector-less [m2e compatibility](http://wiki.eclipse.org/M2E_compatible_maven_plugins) may very well be the end goal
+for this project.  First this connector's behavior should be deemed universally desirable, and not in need of any
+configuration.  As it stands if you find the behavior of this connector unsuitable you're free to uninstall it, or
+swap it out for another solution.  That wouldn't be the case if the behavior was baked into the Maven Dependency Plugin
+proper.
+
 ## Thanks ##
 
 Many thanks to [Fred Bricon](https://community.jboss.org/people/fbricon "Fred Bricon at JBoss") for his help on IRC;
