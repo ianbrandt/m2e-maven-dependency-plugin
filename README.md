@@ -13,7 +13,8 @@ First off, note that this is currently Beta code.  It has been minimally tested,
 warnings apply.  That said if you're willing to help test the connector all you have to do is:
 
 1. Add the following [update site](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-127.htm?cp=0_3_15_5):
-http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
+
+    http://ianbrandt.github.com/m2e-maven-dependency-plugin/snapshots/
 1. Install it into Eclipse like any other [new feature](http://help.eclipse.org/juno/topic/org.eclipse.platform.doc.user/tasks/tasks-124.htm?cp=0_3_15_1).
 1. Remove any [lifecycle mapping metadata](http://wiki.eclipse.org/M2E_plugin_execution_not_covered#ignore_plugin_goal) you might have had in your POMs for the dependency:unpack goal.
 
