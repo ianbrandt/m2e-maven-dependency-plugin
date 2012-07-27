@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+	<extension point="org.eclipse.m2e.core.projectConfigurators">
+		<configurator class="com.ianbrandt.tools.m2e.mdp.core.MdpProjectConfigurator"
+				id="com.ianbrandt.tools.m2e.mdp.core.MdpProjectConfigurator"
+				name="Maven Dependency Plugin Project Configurator">
+		</configurator>
+	</extension>
+	<extension point="org.eclipse.m2e.core.lifecycleMappingMetadataSource">
+	</extension>
+</plugin>
