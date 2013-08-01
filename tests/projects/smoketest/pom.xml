@@ -4,7 +4,7 @@
 
 	<groupId>com.ianbrandt.tools.m2e.mdp.tests</groupId>
 	<artifactId>smoketest</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<build>
 		<plugins>
@@ -23,7 +23,7 @@
 								<artifactItem>
 									<groupId>com.ianbrandt</groupId>
 									<artifactId>com.ianbrandt.tools.m2e.mdp.core</artifactId>
-									<version>0.0.1-SNAPSHOT</version>
+									<version>0.0.2-SNAPSHOT</version>
 									<outputDirectory>${project.build.directory}/generated-resources/</outputDirectory>
 								</artifactItem>
 							</artifactItems>

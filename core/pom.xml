@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.ianbrandt</groupId>
 		<artifactId>m2e-maven-dependency-plugin-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>com.ianbrandt.tools.m2e.mdp.core</artifactId>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature id="com.ianbrandt.tools.m2e.mdp.feature"
 		label="%featureName"
-		version="0.0.1.qualifier"
+		version="0.0.2.qualifier"
 		plugin="com.ianbrandt.tools.m2e.mdp.core">
 
 	<description>

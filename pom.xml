@@ -10,7 +10,7 @@
 
 	<groupId>com.ianbrandt</groupId>
 	<artifactId>m2e-maven-dependency-plugin-parent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>M2E Connector for Maven Dependency Plugin Parent</name>
@@ -59,7 +59,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho-version>0.15.0</tycho-version>
+		<tycho-version>0.18.1</tycho-version>
 	</properties>
 
 	<repositories>
@@ -74,13 +74,18 @@
 		</repository>
 		<repository>
 			<id>eclipse-juno</id>
-			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>eclipse-kepler</id>
+			<url>http://download.eclipse.org/releases/kepler</url>
+			<layout>p2</layout>
 		</repository>
 		<repository>
 			<id>m2e</id>
+			<url>http://download.eclipse.org/technology/m2e/releases/1.4</url>
 			<layout>p2</layout>
-			<url>http://download.eclipse.org/technology/m2e/releases/1.1</url>
 		</repository>
 	</repositories>
 
