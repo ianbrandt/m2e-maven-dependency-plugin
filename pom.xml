@@ -10,7 +10,7 @@
 
 	<groupId>com.ianbrandt</groupId>
 	<artifactId>m2e-maven-dependency-plugin-parent</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>M2E Connector for Maven Dependency Plugin Parent</name>
