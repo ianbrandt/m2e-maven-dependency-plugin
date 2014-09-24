@@ -10,9 +10,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.maven.plugin.MojoExecution;
+import org.apache.maven.project.MavenProject;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IncrementalProjectBuilder;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.m2e.core.MavenPlugin;
 import org.eclipse.m2e.core.embedder.IMaven;
 import org.eclipse.m2e.core.project.configurator.MojoExecutionBuildParticipant;
@@ -40,7 +44,11 @@ public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 		if (mojoExecution == null) {
 			return null;
 		}
-
+		// skipping the build if not a Full Build or if pom.xml has not changed
+ 		final IFile pomFile = (IFile) getMavenProjectFacade().getProject().findMember("pom.xml");
+ 		if(kind != IncrementalProjectBuilder.FULL_BUILD && !buildContext.hasDelta(pomFile.getLocation().toFile())) {
+ 			return null;
+ 		}
 		setTaskName(monitor);
 
 		final Set<IProject> result = executeMojo(kind, monitor);
@@ -59,12 +67,13 @@ public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 			IntrospectionException, IllegalArgumentException, IllegalAccessException, InvocationTargetException {
 
 		final Set<File> outputDirectories = new HashSet<File>();
+		final MavenProject mavenProject = getMavenProjectFacade().getMavenProject();
 
-		final File globalOutputDirectory = maven.getMojoParameterValue(getSession(), mojoExecution,
-				OUTPUT_DIRECTORY_PROPERTY, File.class);
+		final File globalOutputDirectory = maven.getMojoParameterValue(mavenProject, mojoExecution,
+				OUTPUT_DIRECTORY_PROPERTY, File.class, new NullProgressMonitor());
 
-		final List<?> artifactItems = maven.getMojoParameterValue(getSession(), mojoExecution, ARTIFACT_ITEMS_PROPERTY,
-				List.class);
+		final List<?> artifactItems = maven.getMojoParameterValue(mavenProject, mojoExecution, ARTIFACT_ITEMS_PROPERTY,
+				List.class, new NullProgressMonitor());
 
 		Method getOutputDirectoryMethod = null;
 
@@ -108,7 +117,6 @@ public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 	}
 
 	private Set<IProject> executeMojo(final int kind, final IProgressMonitor monitor) throws Exception {
-
 		return super.build(kind, monitor);
 	}
 
