@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: m2e connector for Maven Dependency Plugin
 Bundle-SymbolicName: com.ianbrandt.tools.m2e.mdp.core;singleton:=true
-Bundle-Version: 0.0.3.qualifier
+Bundle-Version: 0.0.4.qualifier
 Bundle-Vendor: Ian Brandt
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.core.resources;bundle-version="3.4.0",

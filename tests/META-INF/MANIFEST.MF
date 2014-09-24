@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: m2e connector for Maven Dependency Plugin Tests
 Bundle-SymbolicName: com.ianbrandt.tools.m2e.mdp.tests
-Bundle-Version: 0.0.3.qualifier
+Bundle-Version: 0.0.4.qualifier
 Bundle-Vendor: Ian Brandt
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Require-Bundle: org.eclipse.m2e.tests.common;bundle-version="1.0.0",

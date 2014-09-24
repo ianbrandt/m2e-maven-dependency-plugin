@@ -2,7 +2,7 @@
 <feature
       id="com.ianbrandt.tools.m2e.mdp.feature"
       label="%featureName"
-      version="0.0.3.qualifier"
+      version="0.0.4.qualifier"
       plugin="com.ianbrandt.tools.m2e.mdp.core">
 
    <description>
