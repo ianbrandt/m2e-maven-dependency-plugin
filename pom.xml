@@ -13,7 +13,7 @@
 	<version>0.0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Parent</name>
+	<name>m2e Connector for Maven Dependency Plugin Parent</name>
 	<url>http://ianbrandt.com</url>
 
 	<modules>

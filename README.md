@@ -1,4 +1,4 @@
-M2E connector for the Maven Dependency Plugin
+m2e connector for the Maven Dependency Plugin
 =============================================
 
 This m2e connector for the Maven Dependency Plugin adds a lifecycle mapping for the

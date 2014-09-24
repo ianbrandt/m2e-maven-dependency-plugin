@@ -11,6 +11,6 @@
 	<artifactId>com.ianbrandt.tools.m2e.mdp.feature</artifactId>
 	<packaging>eclipse-feature</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Feature</name>
+	<name>m2e Connector for Maven Dependency Plugin Feature</name>
 
 </project>

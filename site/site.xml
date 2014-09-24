@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-	<description name="M2E connector for the Maven Dependency Plugin">
-		M2E connector for the Maven Dependency Plugin
+	<description name="m2e connector for the Maven Dependency Plugin">
+		m2e connector for the Maven Dependency Plugin
 	</description>
 	<category name="m2e-maven-dependency-plugin"/>
 	<feature url="features/com.ianbrandt.tools.m2e.mdp.feature_0.0.0.qualifier.jar"
@@ -9,5 +9,5 @@
 			version="0.0.0">
 		<category name="m2e-maven-dependency-plugin"/>
 	</feature>
-	<category-def name="m2e-maven-dependency-plugin" label="M2E connector for the Maven Dependency Plugin"/>
+	<category-def name="m2e-maven-dependency-plugin" label="m2e connector for the Maven Dependency Plugin"/>
 </site>

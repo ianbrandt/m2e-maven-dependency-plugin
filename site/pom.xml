@@ -11,7 +11,7 @@
 	<artifactId>com.ianbrandt.tools.m2e.mdp.site</artifactId>
 	<packaging>eclipse-update-site</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Site</name>
+	<name>m2e Connector for Maven Dependency Plugin Site</name>
 
 	<build>
 		<plugins>
@@ -19,8 +19,8 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-packaging-plugin</artifactId>
 				<configuration>
-					<metadataRepositoryName>M2E connector for the Maven Dependency Plugin</metadataRepositoryName>
-					<artifactRepositoryName>M2E connector for the Maven Dependency Plugin</artifactRepositoryName>
+					<metadataRepositoryName>m2e connector for the Maven Dependency Plugin</metadataRepositoryName>
+					<artifactRepositoryName>m2e connector for the Maven Dependency Plugin</artifactRepositoryName>
 				</configuration>
 			</plugin>
 			<plugin>

@@ -12,6 +12,6 @@
 	<artifactId>com.ianbrandt.tools.m2e.mdp.core</artifactId>
 	<packaging>eclipse-plugin</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Core</name>
+	<name>m2e Connector for Maven Dependency Plugin Core</name>
 
 </project>

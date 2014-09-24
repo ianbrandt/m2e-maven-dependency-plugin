@@ -11,7 +11,7 @@
 	<artifactId>com.ianbrandt.tools.m2e.mdp.tests</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
 
-	<name>M2E Connector for Maven Dependency Plugin Tests</name>
+	<name>m2e Connector for Maven Dependency Plugin Tests</name>
 
 	<build>
 		<plugins>
