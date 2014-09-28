@@ -2,8 +2,8 @@ m2e connector for the Maven Dependency Plugin
 =============================================
 
 This m2e connector for the Maven Dependency Plugin adds a lifecycle mapping for the
-[Unpack Mojo](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html).  It will be executed during
-full and incremental builds, and configured outputDirectory(s) will then be refreshed.
+[Unpack](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html), [Unpack Dependencies](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-dependencies-mojo.html), [Copy](http://maven.apache.org/plugins/maven-dependency-plugin/copy-dependencies-mojo.html) and [Copy Dependencies](http://maven.apache.org/plugins/maven-dependency-plugin/unpack-mojo.html) Mojos.  These Mojos will be executed during
+full builds only, and configured outputDirectory(s) will then be refreshed.
 
 [![Build Status](https://buildhive.cloudbees.com/job/ianbrandt/job/m2e-maven-dependency-plugin/badge/icon)](https://buildhive.cloudbees.com/job/ianbrandt/job/m2e-maven-dependency-plugin/)
 
@@ -23,13 +23,13 @@ warnings apply.  That said if you're willing to help test the connector all you 
 1. Remove any [lifecycle mapping metadata](http://wiki.eclipse.org/M2E_plugin_execution_not_covered#ignore_plugin_goal)
 you might have had in your POMs for the dependency:unpack goal.
 
-That's it!  The connector will run on full and incremental builds, leaving it to the Maven Dependency Plugin's
-[overwrite rules](http://maven.apache.org/plugins/maven-dependency-plugin/usage.html#aOverwrite_Rules) to unpack the
+That's it!  The connector will run on full builds, leaving it to the Maven Dependency Plugin's
+[overwrite rules](http://maven.apache.org/plugins/maven-dependency-plugin/usage.html#aOverwrite_Rules) to copy or unpack the
 artifacts when appropriate.
 
 ### Are there any performance tips I should be aware of? ###
 
-* Be mindful of your overwrite rules.  Forcing an unpack for every IDE build could slow things down quite a bit.
+* Be mindful of your overwrite rules.  Forcing an unpack or copy during a full build could slow things down quite a bit.
 * If you unpack into an `outputDirectory` that generally also contains a lot of other resources, the workspace refresh
 could take longer than you'd want.  Try to unpack artifacts into distinct output directories.
 
@@ -37,13 +37,11 @@ could take longer than you'd want.  Try to unpack artifacts into distinct output
 
 Thanks for asking...
 
-* If you're a dependency:unpack user:
+* If you're a dependency:unpack/dependency:unpack-dependencies/dependency:copy/dependency:copy-dependencies user:
 	* Test this out.  [File an issue](https://github.com/ianbrandt/m2e-maven-dependency-plugin/issues) if it doesn't
 	work for you.  File an issue if you think it should do something more, or something different.
 * If you're a user of any other Maven Dependency Plugin goal:
-	* File an issue to request mappings for additional goals.  Support for copy, copy-dependencies, and
-	unpack-dependencies is currently planned to be similar to that of unpack.  Perhaps you have different needs for
-	those goals?  Be as specific as possible in describing the behavior you would expect.  If you think the behavior
+	* File an issue to request mappings for additional goals.  Be as specific as possible in describing the behavior you would expect.  If you think the behavior
 	might warrant configuration, either via files or a UI, share your vision for this as well.
 * If you're a Tycho expert:
 	* Skim the POMs.  File an issue or submit a pull request if there is something that could be done better.
