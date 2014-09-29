@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+	<description name="m2e connector for the Maven Dependency Plugin">
+		m2e connector for the Maven Dependency Plugin
+	</description>
+	<category name="m2e-maven-dependency-plugin"/>
+	<feature url="features/com.ianbrandt.tools.m2e.mdp.feature_0.0.4.201409291703.jar"
+			id="com.ianbrandt.tools.m2e.mdp.feature"
+			version="0.0.4.201409291703">
+		<category name="m2e-maven-dependency-plugin"/>
+	</feature>
+	<category-def name="m2e-maven-dependency-plugin" label="m2e connector for the Maven Dependency Plugin"/>
+</site>
