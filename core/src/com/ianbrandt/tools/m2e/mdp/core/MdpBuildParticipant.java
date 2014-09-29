@@ -54,11 +54,14 @@ public class MdpBuildParticipant extends MojoExecutionBuildParticipant {
 		if (mojoExecution == null) {
 			return null;
 		}
+
+		final IFile pomFile = (IFile) getMavenProjectFacade().getProject().findMember("pom.xml");
+		
 		// skipping the build if not a Full Build or if pom.xml has not changed
- 		final IFile pomFile = (IFile) getMavenProjectFacade().getProject().findMember("pom.xml");
- 		if(kind != IncrementalProjectBuilder.FULL_BUILD && !buildContext.hasDelta(pomFile.getLocation().toFile())) {
- 			return null;
- 		}
+		if(kind != IncrementalProjectBuilder.FULL_BUILD && !buildContext.hasDelta(pomFile.getLocation().toFile())) {
+			return null;
+		}
+		
 		setTaskName(monitor);
 
 		final Set<IProject> result = executeMojo(kind, monitor);

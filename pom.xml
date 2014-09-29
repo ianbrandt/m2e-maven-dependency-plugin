@@ -59,23 +59,13 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<tycho-version>0.18.1</tycho-version>
+		<tycho-version>0.21.0</tycho-version>
 	</properties>
 
 	<repositories>
 		<repository>
 			<id>rso</id>
 			<url>http://repository.sonatype.org/content/groups/sonatype-public-grid</url>
-		</repository>
-		<repository>
-			<id>eclipse-indigo</id>
-			<layout>p2</layout>
-			<url>http://download.eclipse.org/releases/indigo</url>
-		</repository>
-		<repository>
-			<id>eclipse-juno</id>
-			<url>http://download.eclipse.org/releases/juno</url>
-			<layout>p2</layout>
 		</repository>
 		<repository>
 			<id>eclipse-kepler</id>

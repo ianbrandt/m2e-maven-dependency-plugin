@@ -21,7 +21,7 @@ import org.eclipse.m2e.tests.common.AbstractMavenProjectTestCase;
 @SuppressWarnings("restriction")
 public class M2eMdpConnectorTest extends AbstractMavenProjectTestCase {
 
-	public void testShouldNotUnpackDependency() throws Exception {
+	public void testShouldNotUnpackArtifact() throws Exception {
 		// given
 		final IProject project = importProject("projects/smoketest/pom.xml");
 		waitForJobsToComplete();
@@ -41,7 +41,7 @@ public class M2eMdpConnectorTest extends AbstractMavenProjectTestCase {
 		assertFalse(testResource.getName() + " is missing", testResource.exists());
 	}
 
-	public void testShouldUnpackDependency() throws Exception {
+	public void testShouldUnpackArtifact() throws Exception {
 		// given
 		final IProject project = importProject("projects/smoketest/pom.xml");
 		waitForJobsToComplete();
@@ -52,5 +52,38 @@ public class M2eMdpConnectorTest extends AbstractMavenProjectTestCase {
 		final IFile testResource = project
 				.getFile("target/generated-resources/LICENSE.txt");
 		assertTrue(testResource.getName() + " is missing", testResource.exists());
+	}
+	
+	public void testShouldUnpackDependencies() throws Exception {
+		// given
+		final IProject project = importProject("projects/unpackdeps/pom.xml");
+		waitForJobsToComplete();
+		// when
+		project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
+		waitForJobsToComplete();
+		// then
+		final IFile junitResource = project
+				.getFile("target/generated-resources/junit/framework/Assert.class");
+		assertTrue(junitResource.getName() + " is missing", junitResource.exists());
+		
+		final IFile hamcrestResource = project
+				.getFile("target/generated-resources/org/hamcrest/Matcher.class");
+		assertTrue(hamcrestResource.getName() + " is missing", hamcrestResource.exists());
+	}
+	
+	public void testShouldCopyDependencies() throws Exception {
+		// given
+		final IProject project = importProject("projects/copydeps/pom.xml");
+		waitForJobsToComplete();
+		// when
+		project.build(IncrementalProjectBuilder.FULL_BUILD, monitor);
+		waitForJobsToComplete();
+		// then
+		final IFile junitJar = project
+				.getFile("target/generated-resources/junit-4.10.jar");
+		assertTrue(junitJar.getName() + " is missing", junitJar.exists());
+		final IFile hamcrestJar = project
+				.getFile("target/generated-resources/hamcrest-core-1.1.jar");
+		assertTrue(hamcrestJar.getName() + " is missing", hamcrestJar.exists());
 	}
 }
